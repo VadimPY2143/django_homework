@@ -1,9 +1,10 @@
 from django.urls import path, include
-from app.views import show_name_and_surname, show_age, show_hobby
+from app.views import user_create, user_update, user_delete, user_list
 
 urlpatterns = [
-    path('name_and_surname/', show_name_and_surname, name='name_and_surname'),
-    path('show_age/', show_age, name='show_age'),
-    path('show_hobby/', show_hobby, name='show_hobby')
+    path('', user_list, name='user_list'),
+    path('create/', user_create, name='user_create'),
+    path('update/<int:pk>', user_update, name='user_update'),
+    path('delete/<int:pk>', user_delete, name='user_delete')
 ]
 
